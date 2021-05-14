@@ -16,3 +16,6 @@ Eu criei isso porque as vezes **é mais facil fazer num site** e hoje em dia **a
 - O código é aberto
 - Você pode hospedar a sua propria versão se preferir
 - Não tem **NADA** embutido no site. Só o index.
+
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/angeliski/encode-decode)
+
