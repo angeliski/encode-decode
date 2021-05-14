@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encode-Decode</title>
+</head>
+<body onload="load();">
+<style>
+    .content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .button {
+        font-weight: bolder;
+        font-size: 1.4em;
+        border: none;
+        box-sizing: border-box;
+        border-radius: 2px;
+        cursor: pointer;
+        margin: 2px;
+        padding: 0 16px;
+        height: 40px;
+        background-color: #19c1ce;
+        color: #212429;
+    }
+
+    .label {
+        font-size: 2em;
+    }
+
+    .textarea {
+        width: 80%;
+        min-height: 300px;
+    }
+</style>
+
+<main class="content">
+    <label class="label" for="encoded-value">Valor em base64</label>
+    <textarea class="textarea" name="encoded-value" id="encoded-value" cols="30" rows="10"></textarea>
+    <br>
+    <div>
+        <button id="btnEncode" class="button">↑ Converter para base64</button><button class="button" id="btnDecode">↓ Converter para texto puro</button>
+    </div>
+
+    <br/>
+    <label class="label" for="decoded-value">Valor em texto puro</label>
+    <textarea class="textarea" name="decoded-value" id="decoded-value" cols="30" rows="10"></textarea>    
+</main>
+
+<script>
+function load() {
+  const btnEncode = document.getElementById("btnEncode");
+  btnEncode.addEventListener("click", function(){   
+    const textAreaDecoded = document.getElementById("decoded-value");
+    const textAreaEncoded = document.getElementById("encoded-value");
+
+    textAreaEncoded.value = window.btoa(textAreaDecoded.value)
+
+    }, false);
+
+    const btnDecode = document.getElementById("btnDecode");
+    btnDecode.addEventListener("click", function(){   
+    const textAreaDecoded = document.getElementById("decoded-value");
+    const textAreaEncoded = document.getElementById("encoded-value");
+
+    textAreaDecoded.value = window.atob(textAreaEncoded.value)
+
+    }, false);
+}
+</script>
+
+</body>
+</html>    
